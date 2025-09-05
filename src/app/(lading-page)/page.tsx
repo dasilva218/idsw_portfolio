@@ -1,11 +1,12 @@
-import Hero from "./components/hero/Hero";
-import HeroSection from "./components/hero/Hero2";
+import About from "./components/about/About";
+import HeroSection from "./components/hero/HeroSection";
 
 export default function Home() {
   return (
     <main className="" >
-      <HeroSection />
       {/* <Hero /> */}
+      <HeroSection />
+      <About />
     </main>
   );
 }
