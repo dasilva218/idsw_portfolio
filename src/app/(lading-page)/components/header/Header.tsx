@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import LogoImg from "../hero/LogoImg";
 
@@ -37,23 +38,29 @@ const CloseIcon = ({ className }: { className?: string }) => (
 );
 
 function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const navLinks = ["Accueil", "À propos", "Expériences", "Compétences", "Projets"];
+  const MENU = [
+    { section: '#hero', link: 'Accueil' },
+    { section: '#About', link: 'À propos' },
+    { section: '#Skills', link: 'Compétences' },
+    { section: '#Experiences', link: 'Expériences' },
+    // { section: '#Projects', link: 'Projets' }
+  ]
 
-    useEffect(() => {
-      if (isMenuOpen) {
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "unset";
-      }
-      return () => {
-        document.body.style.overflow = "unset";
-      };
-    }, [isMenuOpen]);
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
   return (
     <>
-      <header className="py-6 px-4 sm:px-6 lg:px-8 sticky top-0 z-10 transition-all duration-300">
+      <header className="  px-4 bg-transparent sm:px-6 lg:px-8 transition-all duration-300">
         <nav className="flex items-center justify-between mx-auto">
           <div className="flex items-center gap-2">
             <LogoImg />
@@ -65,14 +72,14 @@ function Header() {
           </div>
 
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link}
-                href="#"
+            {MENU.map(({ section, link }) => (
+              <Link
+                key={section}
+                href={section}
                 className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               >
                 {link}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -110,14 +117,14 @@ function Header() {
             </button>
           </div>
           <nav className="flex flex-col items-start gap-5">
-            {navLinks.map((link) => (
-              <a
+            {MENU.map(({ link, section }) => (
+              <Link
                 key={link}
-                href="#"
+                href={section}
                 className="text-gray-800 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-lg w-full text-left py-2"
               >
                 {link}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>

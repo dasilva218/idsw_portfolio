@@ -1,5 +1,6 @@
 "use client"
 import React, { memo, useEffect, useState } from 'react';
+import LogoImg from '../hero/LogoImg';
 
 // --- Type Definitions ---
 type IconType = 'html' | 'css' | 'javascript' | 'react' | 'node' | 'tailwind';
@@ -287,26 +288,26 @@ function Orbiting() {
   ];
 
   return (
-    <main className="w-full flex items-center justify-center overflow-hidden">
+    <main className=" w-full flex mt-10 justify-center ">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div
           className="absolute inset-0"
           style={{
             backgroundImage: `radial-gradient(circle at 25% 25%, #374151 0%, transparent 50%),
-                             radial-gradient(circle at 75% 75%, #4B5563 0%, transparent 50%)`,
+                          radial-gradient(circle at 75% 75%, #4B5563 0%, transparent 50%)`,
           }}
         />
       </div>
 
       <div
-        className="relative w-[calc(100vw-40px)] h-[calc(100vw-40px)] md:w-[450px] md:h-[450px] flex items-center justify-center"
+        className="relative w-[calc(500vw-40px)] h-[calc(100vw-40px)] md:w-[450px] md:h-[450px] flex items-center justify-center"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
 
         {/* Central "Code" Icon with enhanced glow */}
-        <div className="w-20 h-20 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full flex items-center justify-center z-10 relative shadow-2xl">
+        {/* <div className="w-20 h-20 bg-gradient-to-br from-gray-700 to-gray-900 rounded-full flex items-center justify-center z-10 relative shadow-2xl">
           <div className="absolute inset-0 rounded-full bg-cyan-500/30 blur-xl animate-pulse"></div>
           <div className="absolute inset-0 rounded-full bg-purple-500/20 blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
           <div className="relative z-10">
@@ -321,8 +322,8 @@ function Orbiting() {
               <polyline points="8 6 2 12 8 18"></polyline>
             </svg>
           </div>
-        </div>
-
+        </div> */}
+        <LogoImg />
         {/* Render glowing orbit paths */}
         {orbitConfigs.map((config) => (
           <GlowingOrbitPath

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { memo, useCallback, useState } from "react";
-import Orbiting from "./Orbiting";
 
 // Helper components to make this example self-contained.
 // In a real app, import icons from 'lucide-react' and your Badge from your UI library.
@@ -29,11 +28,11 @@ type IconType = React.ComponentType<React.SVGProps<SVGSVGElement>>;
 interface TimelineItemData {
   id: string;
   title: string;
-  type: string;
+  type?: string;
   duration: string;
   icon: IconType;
   responsibilities: string[];
-  skills: string[];
+  skills?: string[];
 }
 
 type ExpandMode = "multi" | "single";
@@ -48,46 +47,129 @@ interface ProfessionalTimelineProps {
 const timelineData: TimelineItemData[] = [
   {
     id: "timeline-item-1",
-    title: "Senior Frontend Developer",
-    type: "Full-time",
-    duration: "10.2022—Present",
+    title: "Formateur en développement web & web mobile École 241 (Ogooué Labs Entrepreneuriat)",
+    // type: "Full-time",
+    duration: "Juillet. 2023 – Août 2025",
     icon: Code,
     responsibilities: [
-      "Lead development of complex React applications with TypeScript.",
-      "Architect scalable frontend solutions using Next.js and modern tooling.",
-      "Mentor junior developers and conduct code reviews.",
-      "Collaborate with design and backend teams to deliver high-quality products.",
+      "Conception et animation de modules en présentiel, basés sur la pédagogie active (projets fil rouge,travaux pratiques en binômes) ",
+      "Accompagnement de groupes de 15–25 apprenants : définition des objectifs, feedback continu et évaluation par compétences",
+      "Mise en place d’un tableau de bord de suivi individuel des apprenants (suivi des livrables, progression)",
+      "25 apprenants formés par promotion",
     ],
-    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "GraphQL"],
+    // skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "GraphQL"],
   },
   {
     id: "timeline-item-2",
-    title: "UI Design Lead",
-    type: "Full-time",
-    duration: "10.2022—Present",
-    icon: Palette,
+    title: "Formateur en ligne (2 mois) 241 CommunityJuin 2024(Ogooué Labs Entrepreneuriat) ",
+    // type: "Full-time",
+    duration: "Juin 2024",
+    icon: Code,
     responsibilities: [
-      "Ensure UI/UX consistency and high-quality standards.",
-      "Design intuitive, user-focused interfaces aligned with business goals.",
-      "Define and establish a cohesive UI style for the company.",
+      "Conception et animation d’un parcours de formation intensif à distance",
+      "Utilisation d’outils collaboratifs(plateforme de l’école, Zoom) pour projets de groupe",
+      "Recueil de feedback quotidien et adaptation du rythme pédagogique"
     ],
-    skills: ["Creativity", "UI/UX Design", "Figma"],
+    // skills: ["Creativity", "UI/UX Design", "Figma"],
   },
   {
     id: "timeline-item-3",
-    title: "Frontend Developer",
-    type: "Full-time",
-    duration: "03.2021—09.2022",
+    title: "Contrôleur facturation S.E.E.G. (Société d’Énergie et d’Eau du Gabon)",
+    // type: "Full-time",
+    duration: "2009 – 2013",
     icon: Code,
     responsibilities: [
-      "Developed responsive web applications using React and Vue.js.",
-      "Implemented pixel-perfect designs from Figma mockups.",
-      "Optimized application performance and user experience.",
-      "Collaborated in an agile development environment.",
+      "Élaboration d’un système de contrôle des instances et factures des clients moyenne tension",
+      "Mise en place et suivi d’un historique de consommation clients(analyse des écarts mensuels)",
+      "Réduction des erreurs de facturation de 0 % grâce à l’automatisation des contrôles"
     ],
-    skills: ["React", "Vue.js", "JavaScript", "CSS", "HTML"],
+    // skills: ["React", "Vue.js", "JavaScript", "CSS", "HTML"],
   },
+  {
+    id: "timeline-item-4",
+    title: "Développeur consultant CKDO (Aéroport de Libreville)",
+    // type: "Full-time",
+    duration: "2020 – 2023",
+    icon: Code,
+    responsibilities: [
+      "Développement d’une application métier de suivi des inventaires",
+      "Intégration d’un module d’authentification et création d’un tableau de bord analytique",
+    ],
+    skills: ["PHP", "codeIgniter", "JavaScript", "CSS", "HTML"],
+  },
+  {
+    id: "timeline-item-5",
+    title: "Développeur Web & Base de données SBPRO (Maison d’édition)",
+    // type: "Full-time",
+    duration: "2016 – 2018",
+    icon: Code,
+    responsibilities: [
+      "Gestion des inventaires et conception de la base de données clients et produits",
+      "Développement et maintenance du site web de la maison d’édition",
+      "Conception graphique du magazine Izeva et création d’objets publicitaires"
+    ],
+    // ,skills: ["React", "Vue.js", "JavaScript", "CSS", "HTML"],
+  },
+  {
+    id: "timeline-item-6",
+    title: "Développeur prototype web E‐Startup Challenge",
+    // type: "Full-time",
+    duration: "2020",
+    icon: Code,
+    responsibilities: [
+      "Conception du prototype web NTCHINA .",
+    ],
+    skills: ["PHP", "codeIgniter", "JavaScript", "CSS", "HTML"],
+  },
+  {
+    id: "timeline-item-7",
+    title: "Développeur Backend Ogooué Labs Entrepreneuriat",
+    // type: "Full-time",
+    duration: "2020",
+    icon: Code,
+    responsibilities: [
+      "Contribution à l’élaboration du système d’inscription de la plateforme business",
+    ],
+    skills: ["PHP", "codeIgniter", "JavaScript", "CSS", "HTML"],
+  }
 ];
+
+const formationData: TimelineItemData[] = [
+  {
+    id: "devweb",
+    title: "Formation Développement Web & Web Mobile École 241",
+    // type: "Full-time",
+    duration: "2019 – 2020",
+    icon: Code,
+    responsibilities: [
+      "Certification Simplon Formation accélérée et pratique à travers la pédagogie inversée",
+    ],
+    // skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "GraphQL"],
+  },
+  {
+    id: "formateur",
+    title: "Formation de formateur en pédagogie active",
+    // type: "Full-time",
+    duration: "MAI 2024",
+    icon: Code,
+    responsibilities: [
+      "Organisée par SIMPLON AFRICA Vise à doter les formateurs des compétences pour enseigner efficacement le développement web et web mobile, avec un focus sur la pédagogie active, les briefs projets et la déontologie du formateur",
+    ],
+    // skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "GraphQL"],
+  },
+  {
+    id: "referent",
+    title: "Formation des Référents Pédagogiques (CAPAC’IT 4 AFRICA) ",
+    // type: "Full-time",
+    duration: "MAI 2025",
+    icon: Code,
+    responsibilities: [
+      "Intégration et évaluation des compétences transversales dans la formation professionnelle",
+      "Intégration de L’IA au service de la pédagogie",
+    ],
+    // skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "GraphQL"],
+  },
+]
 
 // --- COMPONENTS ---
 interface TimelineItemContentProps {
@@ -111,7 +193,7 @@ const TimelineItemContent = memo(function TimelineItemContent({ item }: Timeline
       </ul>
 
       {/* Skills */}
-      <div className="flex flex-wrap gap-2 pt-2">
+      {/* <div className="flex flex-wrap gap-2 pt-2">
         {item.skills.map((skill, skillIdx) => (
           <Badge
             key={`${item.id}-skill-${skillIdx}`}
@@ -120,7 +202,7 @@ const TimelineItemContent = memo(function TimelineItemContent({ item }: Timeline
             {skill}
           </Badge>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 });
@@ -235,15 +317,27 @@ export function ProfessionalTimeline({
 // --- APP ENTRY POINT ---
 function Experience() {
   return (
-    <div className="bg-white flex flex-row dark:bg-black min-h-screen p-4 sm:p-8 transition-colors duration-300">
-      <div className="max-w-3xl mx-auto">
-        <header className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-slate-800 dark:text-slate-100">Professional Experience</h1>
-        </header>
-        {/* Set expandMode="single" for accordion behavior */}
-        <ProfessionalTimeline data={timelineData} expandMode="multi" />
+    <section id="Experiences" className="min-h-screen py-3 px-3 border-t-1 border-t-blue-950  transition-colors duration-300">
+      <div className="grid sm:grid-cols-2">
+        {/* section exprerience */}
+        <div className="max-w-3xl mx-auto">
+          <header className="flex justify-center items-center ">
+            <h1 className="text-3xl p-2 font-bold text-slate-800 dark:text-slate-100">Expérience Professionnelle</h1>
+          </header>
+          {/* Set expandMode="single" for accordion behavior */}
+          <ProfessionalTimeline data={timelineData} expandMode="multi" />
+        </div>
+        {/* section formation */}
+        <div className="max-w-3xl mx-auto">
+          <header className="flex justify-center items-center ">
+            <h1 className="text-3xl p-2 font-bold text-slate-800 dark:text-slate-100">Formations & Diplômes</h1>
+          </header>
+          {/* Set expandMode="single" for accordion behavior */}
+          <ProfessionalTimeline data={formationData} expandMode="single" />
+        </div>
+
       </div>
-    </div>
+    </section>
   );
 }
 
