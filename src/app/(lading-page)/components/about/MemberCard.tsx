@@ -26,7 +26,7 @@ const Member: TeamMember = {
 const socialIcons: socialIcons[] = [
   {
     name: "LinkedIn",
-    href: "#",
+    href: "https://linkedin.com/in/wilfrid-iveke-da-silva-a6a7591a2",
     svg: (
       <svg
         className="size-6 transition-transform duration-200 hover:scale-110"
