@@ -6,6 +6,7 @@ import Orbiting from "./components/experience/Orbiting";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import HeroSection from "./components/hero/HeroSection";
+import Projets from "./components/projets/Projets";
 import Skill from "./components/skill/Skill";
 
 export default function Home() {
@@ -35,8 +36,23 @@ export default function Home() {
       <About />
       <Experience />
       <Skill />
+      {/* <Projets /> */}
       <Orbiting />
       <Footer />
     </main>
   );
 }
+
+{/* <LightRays
+  raysOrigin="top-center"
+  raysColor="#00ffff"
+  raysSpeed={1.5}
+  lightSpread={0.8}
+  rayLength={1.2}
+  followMouse={true}
+  mouseInfluence={0.1}
+  noiseAmount={0.1}
+  distortion={0.05}
+  className="custom-rays"
+/> */}
+// "ogl": "^1.0.11",

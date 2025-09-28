@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <section className="relative z-5 min-h-screen font-sans" id="hero" >
-      <main className="flex items-center justify-center text-center w-full">
+      <main className="flex border items-center justify-center text-center w-full">
         <div className=" flex flex-col items-center justify-center py-10 sm:py-16 px-4 max-w-5xl mx-auto">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight max-w-4xl">
             Du concept{" "}

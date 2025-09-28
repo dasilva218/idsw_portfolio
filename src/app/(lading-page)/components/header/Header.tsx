@@ -45,7 +45,7 @@ function Header() {
     { section: '#About', link: 'À propos' },
     { section: '#Skills', link: 'Compétences' },
     { section: '#Experiences', link: 'Expériences' },
-    // { section: '#Projects', link: 'Projets' }
+    { section: '#Projects', link: 'Projets' }
   ]
 
   useEffect(() => {
