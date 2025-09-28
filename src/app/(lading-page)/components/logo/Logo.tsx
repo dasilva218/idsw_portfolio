@@ -1,10 +1,12 @@
+import logoImg from "@/assets/logos/logo4.webp";
 import Image from "next/image";
 
-function LogoImg() {
+
+function Logo() {
   return (
     <div className="relative w-14 h-14">
       <Image
-        src="/logo/logo4.webp"
+        src={logoImg}
         alt="Logo"
         fill
         className="object-cover"
@@ -14,4 +16,4 @@ function LogoImg() {
   );
 }
 
-export default LogoImg;
+export default Logo;

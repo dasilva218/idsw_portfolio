@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import LogoImg from "../hero/LogoImg";
+import Logo from "../logo/Logo";
 
 
 const MenuIcon = ({ className }: { className?: string }) => (
@@ -45,7 +45,7 @@ function Header() {
     { section: '#About', link: 'À propos' },
     { section: '#Skills', link: 'Compétences' },
     { section: '#Experiences', link: 'Expériences' },
-    { section: '#Projects', link: 'Projets' }
+    // { section: '#Projects', link: 'Projets' }
   ]
 
   useEffect(() => {
@@ -63,12 +63,7 @@ function Header() {
       <header className="  px-4 bg-transparent sm:px-6 lg:px-8 transition-all duration-300">
         <nav className="flex items-center justify-between mx-auto">
           <div className="flex items-center gap-2">
-            <LogoImg />
-            {/* <Logo className="h-15 w-15" /> */}
-            {/* <StackerLogo className="h-8 w-8" /> */}
-            {/* <span className="font-bold text-2xl text-gray-900 dark:text-white">
-              IDSW
-            </span> */}
+            <Logo />
           </div>
 
           <div className="hidden lg:flex items-center gap-8">

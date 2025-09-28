@@ -1,4 +1,4 @@
-import LogoImg from "../hero/LogoImg";
+import LogoImg from "../logo/Logo";
 import Link from "./Link";
 
 

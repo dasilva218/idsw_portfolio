@@ -1,6 +1,6 @@
 "use client"
 import React, { memo, useEffect, useState } from 'react';
-import LogoImg from '../hero/LogoImg';
+import LogoImg from '../logo/Logo';
 
 // --- Type Definitions ---
 type IconType = 'html' | 'css' | 'javascript' | 'react' | 'node' | 'tailwind';
