@@ -41,5 +41,3 @@ export default function Home() {
     </main>
   );
 }
-
-// "ogl": "^1.0.11",
